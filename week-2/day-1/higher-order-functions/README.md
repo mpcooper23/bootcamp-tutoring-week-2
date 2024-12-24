@@ -162,3 +162,23 @@ function getNewsletterSubscribers(students){
 ```
 
 Something you might notice as you're looking at these functions... they're all BASICALLY the same. They all take in an array of student objects; they iterate through each object in the array; at each iteration they determine if a certain condition is true, and if it is they push the object to an output array. The only thing that is really different about each function is the condition that is being tested in the for loop.
+
+Again, this provides us an opportunity to make this process of subdividing students based on something more abstract and more flexible, but how? Think about it like this... rather than creating a new function for every different thing we might want to subdivide by, we will create one function:
+
+```javascript
+function subdivide(students, func){
+    const output = [];
+    for (let i = 0; i < students.length; i++){
+        if (func(students[i]) === true){
+            output.push(students[i]);
+        }
+    }
+    return output;
+}
+
+const bootcamp = subdivide(students, function(student){
+    return student.courses.current.phase === 'Bootcamp'
+}); 
+
+console.log(bootcamp); // => [ {Stephanie Cooper}, {Bethany Joseph}]
+```
