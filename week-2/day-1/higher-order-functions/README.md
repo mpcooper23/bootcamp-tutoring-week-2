@@ -101,7 +101,7 @@ const students = [
 
 With this database of `students` we are tracking the most vital data: age, location, the student's current course, the past courses they've completed, whether they subscribe to our newsletter, etc.
 
-From a student management perspective, how many different types of ways might we want to sub-divide our students? Think about it. The most obvious thing would probably be to sub-divide based on course (which students are currently in Prep, Bootcamp, etc.). How would we go about doing this? Well, from a programming perspective, if there is a task you expect to repeat, you want to package the behavior of that task into a function you can invoke.
+From a student management perspective, how many different types of ways might we want to subdivide our students? Think about it. The most obvious thing would probably be to subdivide based on course (which students are currently in Prep, Bootcamp, etc.). How would we go about doing this? Well, from a programming perspective, if there is a task you expect to repeat, you want to package the behavior of that task into a function you can invoke.
 
 ```javascript
 function getBootcampStudents(students){
@@ -137,7 +137,7 @@ getStudentsByCourse(students, 'Bootcamp'); // => [ {Stephanie Cooper}, {Bethany 
 getStudentsByCourse(students, 'Immersion - Junior'); // => [ {Nathan Coen}, {Kyle Bradley} ]
 ```
 
-Now instead of hardcoding 'Bootcamp', the function takes in a `phase` param, which could be any course. What if we want to sub-divide by another category? Like location, or age, or students who subscribe to the newsletter? Well, theoretically, we could create a function for each subdivision.
+Now instead of hardcoding 'Bootcamp', the function takes in a `phase` param, which could be any course. What if we want to subdivide by another category? Like location, or age, or students who subscribe to the newsletter? Well, theoretically, we could create a function for each subdivision.
 
 ```javascript
 function getStudentsByLocation(students, location){
@@ -182,3 +182,23 @@ const bootcamp = subdivide(students, function(student){
 
 console.log(bootcamp); // => [ {Stephanie Cooper}, {Bethany Joseph}]
 ```
+
+Admittedly, there is a lot going on here, but fundamentally here is what we've done: we have created a function that takes in a param of `students`, which we can assume is an array of student objects, and a param of `func`, which based on the name we can assume is a function. But why are receiving a function as an input?
+
+As you look at the function, you will see it's still doing the same basic things that happened in the previous functions: it's iterating through the input array; and at each iteration it's hitting this code:
+
+```javascript
+if (func(students[i]) === true){
+    output.push(students[i]);
+}
+```
+
+This kind of if statement can be difficult for students to parse initially. What exactly are we evaluating? If you break the if statement into its core parts you see this:
+
+```javascrip
+               func(students[i]) === true
+//                    ^                ^
+//               expression 1     expression 2
+```
+
+So, in essence we are saying this: is the resulting of invoking func on the current item in the array strictly equal to true. In other words, when you invoke whatever function `func` represents, does it return true? This is a way of making our subdivide function as flexible as possible. Rather than hardcoding what we are evaluating, we are simply invoking a function that returns true or false.
