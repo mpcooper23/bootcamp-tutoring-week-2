@@ -163,7 +163,7 @@ function getNewsletterSubscribers(students){
 
 Something you might notice as you're looking at these functions... they're all BASICALLY the same. They all take in an array of student objects; they iterate through each object in the array; at each iteration they determine if a certain condition is true, and if it is they push the object to an output array. The only thing that is really different about each function is the condition that is being tested in the for loop.
 
-Again, this provides us an opportunity to make this process of subdividing students based on something more abstract and more flexible, but how? Think about it like this... rather than creating a new function for every different thing we might want to subdivide by, we will create one function:
+Again, this provides us an opportunity to make this process of subdividing students based on something more abstract and more flexible. But how? Think about it like this... rather than creating a new function for every different thing we might want to subdivide by, we will create one function:
 
 ```javascript
 function subdivide(students, func){
@@ -201,4 +201,19 @@ This kind of if statement can be difficult for students to parse initially. What
 //               expression 1     expression 2
 ```
 
-So, in essence we are saying this: is the resulting of invoking func on the current item in the array strictly equal to true. In other words, when you invoke whatever function `func` represents, does it return true? This is a way of making our subdivide function as flexible as possible. Rather than hardcoding what we are evaluating, we are simply invoking a function that returns true or false.
+So, in essence we are saying this: is the resulting of invoking func on the current item in the array strictly equal to true. In other words, when you invoke whatever function `func` represents, does it return true? This is a way of making our subdivide function as flexible as possible. Rather than hardcoding what we are evaluating, we are simply invoking a function that returns true or false and checking to see if the result is true.
+
+Now that we've created this `subdivide` function, we no longer to need to create new functions every time we think of some condition that we might want to subdivide by. We simply need to invoke `subdivide` on our array of `students`, and we need to provide something we call a "callback" function that defines what condition we are testing for.  Here are some examples:
+
+```javascript
+
+// invoke subdive to create array of students under 21
+const underTwentyOne = subdivide(students, function(student){
+    return student.age <= 21;
+});
+
+// invoke subdivide to create array of students whose last name begins with 'C'
+const lastNameStartsWithC = subdivide(students, function(student){
+    return student.name[0] === 'C';
+})
+```
