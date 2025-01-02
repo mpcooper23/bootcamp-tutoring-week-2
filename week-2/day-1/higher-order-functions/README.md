@@ -207,7 +207,7 @@ Now that we've created this `subdivide` function, we no longer to need to create
 
 ```javascript
 
-// invoke subdive to create array of students under 21
+// invoke subdivide to create array of students under 21
 const underTwentyOne = subdivide(students, function(student){
     return student.age <= 21;
 });
@@ -217,3 +217,5 @@ const lastNameStartsWithC = subdivide(students, function(student){
     return student.name[0] === 'C';
 })
 ```
+
+The applications of this `subdivide` function we've created are extensive. It's important to note however that the behavior of this `subdivide` function is not a new idea. We call this "filtering". Filtering is when you iterate through a collection and you "test" each item in the collection in some way. Every item that "passes" the test is pushed to an output array. This is just one example of how we can create a function that utilizes a "callback" to be performed on every item in the collection.
