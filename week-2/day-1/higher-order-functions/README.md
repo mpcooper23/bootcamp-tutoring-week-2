@@ -183,7 +183,7 @@ const bootcamp = subdivide(students, function(student){
 console.log(bootcamp); // => [ {Stephanie Cooper}, {Bethany Joseph}]
 ```
 
-Admittedly, there is a lot going on here, but fundamentally here is what we've done: we have created a function that takes in a param of `students`, which we can assume is an array of student objects, and a param of `func`, which based on the name we can assume is a function. But why are receiving a function as an input?
+Admittedly, there is a lot going on here, but fundamentally here is what we've done: we have created a function that takes in a param of `students`, which we can assume is an array of student objects, and a param of `func`, which based on the name we can assume is a function. This is a called a *"higher order function"*. A higher order function is any function that **takes in a function as an argument or returns a function.**
 
 As you look at the function, you will see it's still doing the same basic things that happened in the previous functions: it's iterating through the input array; and at each iteration it's hitting this code:
 
@@ -218,4 +218,6 @@ const lastNameStartsWithC = subdivide(students, function(student){
 })
 ```
 
-The applications of this `subdivide` function we've created are extensive. It's important to note however that the behavior of this `subdivide` function is not a new idea. We call this "filtering". Filtering is when you iterate through a collection and you "test" each item in the collection in some way. Every item that "passes" the test is pushed to an output array. This is just one example of how we can create a function that utilizes a "callback" to be performed on every item in the collection.
+The applications of this `subdivide` function we've created are extensive. It's important to note however that the behavior of this `subdivide` function is not a new idea. We call this "filtering". Filtering is when you iterate through a collection and you "test" each item in the collection using a callback function. Every item that returns true when the callback is invoked is pushed to an output array. This is just one example of how we can create a function that utilizes a "callback" to be performed on every item in the collection.
+
+In today's work, follow the instructions in the `hof.js` file to create 3 different functions that take it in other functions as arguments.
