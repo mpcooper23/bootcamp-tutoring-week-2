@@ -1,0 +1,1 @@
+Yesterday, we discussed Higher Order Functions on a more general level. We saw that when we create functions that take in other functions, it allows us to create much more flexible and abstract behavior. 

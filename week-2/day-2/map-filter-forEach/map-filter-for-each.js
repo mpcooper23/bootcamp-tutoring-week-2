@@ -25,7 +25,7 @@ const filterByCoursesAndLocation = (array, location) => {
 };
 
 // Problem #4 //
-const filterByPastCourse = (array) => {
+const filterByBootcamp = (array) => {
     return array.filter(s => {
         const past = s.courses.past;
         for (let i = 0; i < past.length; i++){
@@ -36,7 +36,27 @@ const filterByPastCourse = (array) => {
     });
 };
 
-console.log(filterByPastCourse(students));
+// Problem #5 //
+const mapCurrentCourses = (array) => {
+    return array.map(s => {
+        const { phase, date } = s.courses.current;
+        return `${phase} - ${date}`;
+    });
+};
+
+// Problem #6 //
+const mapPastCourses = (array) => {
+    return array.map(s => {
+        const output = {};
+        s.courses.past.forEach(c => {
+            const { phase, date } = c;
+            output[phase] = date;
+        });
+        return output;
+    });
+};
+
+console.log(mapPastCourses(students));
 
 
 
