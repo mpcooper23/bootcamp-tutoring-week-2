@@ -79,3 +79,74 @@ n => n * 10
 
 */
 ```
+
+The key thing to remember here is that in each of these callback functions for map and filter, the `n` param represents the current item in the array that is being passed to the callback function at that point. In this case of filter, we are applying a test to that value (when divided by 2 does the result NOT equal 0); in the case of map we are returning the result of multiplying that value by 10. But in either case, the only parameter we are working with is `n`.
+
+In the case of our reduce example, our callback function looks like this:
+
+```javascript
+const sum = nums.reduce((accumulator, current) => {
+    return accumulator + current;
+}, 0);
+
+// callback
+/*
+
+(accumulator, current) => {
+    return accumulator + current;
+}
+
+*/
+```
+
+The callback function in this case has a param of `accumulator` and `current`. The first thing to understand here is that the param `current` in this case serves same purpose as `n` in the previous examples. `current` represents the current item in the array the callback function is receiving at that point. 
+
+But what about this `accumulator` param? This is unique to `reduce()`. Think of this `accumulator` as the current state of whatever it is you are trying to return. In this case, `accumulator` represents the state of the sum we are ultimately trying to return. And here is a vital connection: whatever you pass in as the `seed` acts as the first value of `accumulator`. Here is how you can envision this process playing out:
+
+```javascript
+const sum = nums.reduce((accumulator, current) => {
+    return accumulator + current;
+}, 0);
+
+/* iteration #1
+
+      0          5
+(accumulator, current) => { return 0 + 5 }
+            
+              returns => 5
+
+*/
+//////////////////////////////////////////
+/* iteration #2
+
+      5          6
+(accumulator, current) => { return 5 + 6 }
+
+              returns => 11
+
+*/
+/////////////////////////////////////////
+/* iteration #3
+
+      11         7
+(accumulator, current) => { return 11 + 7 }
+
+              returns => 18
+*/
+/////////////////////////////////////////
+/* iteration #4
+
+      18         8
+(accumulator, current) => { return 18 + 8 }
+
+              returns => 26
+*/
+```
+
+So, because of our `seed` value, the first time our callback function is invoked, the value of `accumulator` will be 0, and the value of `current` will be the first value we are accessing the array, which is 5. And every time the callback function is invoked, it is going to return the result of adding accumulator to the current value in the array.
+
+The key thing that makes this process work though is this: whatever the callback function becomes the value of accumulator on the next iteration. That is why on iteration #2 the value of `accumulator` will be 5 (the result of adding 0 + 5). This is how reduce "accumulates" its return value. Whatever the final value returned by the callback function is what reduce returns.
+
+Additional reduce info:
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+* https://www.w3schools.com/jsref/jsref_reduce.asp
