@@ -1,33 +1,16 @@
 // Problem #1 // 
-const currentBootcampers = (array) => {
-    return array.reduce((acc, student) => {
-        const { phase } = student.courses.current;
-        phase === 'Bootcamp' ? acc += 1 : acc;
-        return acc;
-    }, 0);
+const currentBootcampers = () => {
+    
 };
 
 // Problem #2 //
-const getNamesByLocation = (array, location) => {
-    return array.reduce((acc, current) => {
-        if (current.location === location){
-            acc.push(current.name);
-        }
-        return acc;
-    }, []);
+const getNamesByLocation = () => {
+   
 };
 
 // Problem #3 //
-const getPrecourseNames = (array) => {
-    return array.reduce((acc, current) => {
-        const { past } = current.courses;
-        past.forEach(c => {
-            if (c.phase === "Precourse"){
-                acc += current.name + "\n";
-            }
-        })
-        return acc;
-    }, "");
+const getPrecourseNames = () => {
+    
 };
 
 // Problem #4 //
