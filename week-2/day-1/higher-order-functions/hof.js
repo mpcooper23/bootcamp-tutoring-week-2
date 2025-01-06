@@ -13,8 +13,12 @@
  *  find(['Alex Aaron', 'Stephanie Cooper', 'Bethany Jones'], function(name){ return name === 'Stephanie Cooper'}); // => 'Stephanie Cooper'
  */
 
-const find = () => {
-    
+const find = (array, func) => {
+   for (let i = 0; i < array.length; i++){
+    if (func(array[i], i, array)){
+        return array[i];
+    }
+   }
 };
 
 /** mapByDataType()
@@ -30,8 +34,14 @@ const find = () => {
  *  mapByDataType([null, 1, 'a', 2], 'number', function(item){ return item * 10 }, 'number'); // => [10, 20]
  */
 
-const mapByDataType = () => {
-   
+const mapByDataType = (array, func, string) => {
+    let newArr = []
+   for(let i = 0; i < array.length; i++){
+    if(typeof array[i] === string){
+        newArr.push(func(array[i], i, array))
+    }
+   }
+   return newArr
 };
 
 /** filterByCondition()
