@@ -27,7 +27,7 @@ const find = () => {
  *  2) call <function> on each element whose datatype matches <datatype>
  *  3) save the return value of each function call in a new array and return it at the end
  * Example:
- *  mapByDataType([null, 1, 'a', 2], function(item){ return item * 10 }, 'number'); // => [10, 20]
+ *  mapByDataType([null, 1, 'a', 2], 'number', function(item){ return item * 10 }, 'number'); // => [10, 20]
  */
 
 const mapByDataType = () => {
