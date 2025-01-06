@@ -30,7 +30,6 @@ const find = () => {
  *  mapByDataType([null, 1, 'a', 2], function(item){ return item * 10 }, 'number'); // => [10, 20]
  */
 
-
 const mapByDataType = () => {
    
 };
@@ -52,6 +51,7 @@ const mapByDataType = () => {
  *  }); // => [30, 40];
  * 
  */
+
 const filterByCondition = () => {
     
 };

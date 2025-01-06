@@ -145,7 +145,7 @@ const sum = nums.reduce((accumulator, current) => {
 
 So, because of our `seed` value, the first time our callback function is invoked, the value of `accumulator` will be 0, and the value of `current` will be the first value we are accessing the array, which is 5. And every time the callback function is invoked, it is going to return the result of adding accumulator to the current value in the array.
 
-The key thing that makes this process work though is this: whatever the callback function becomes the value of accumulator on the next iteration. That is why on iteration #2 the value of `accumulator` will be 5 (the result of adding 0 + 5). This is how reduce "accumulates" its return value. Whatever the final value returned by the callback function is what reduce returns.
+The key thing that makes this process work though is this: whatever the callback function returns becomes the value of accumulator on the next iteration. That is why on iteration #2 the value of `accumulator` will be 5 (the result of adding 0 + 5). This is how reduce "accumulates" its return value. Whatever the final value returned by the callback function is what reduce returns.
 
 Additional reduce info:
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce

@@ -17,6 +17,29 @@ const getNamesByLocation = (array, location) => {
     }, []);
 };
 
-console.log(getNamesByLocation(students, 'New Orleans, LA'));
-
 // Problem #3 //
+const getPrecourseNames = (array) => {
+    return array.reduce((acc, current) => {
+        const { past } = current.courses;
+        past.forEach(c => {
+            if (c.phase === "Precourse"){
+                acc += current.name + "\n";
+            }
+        })
+        return acc;
+    }, "");
+};
+
+// Problem #4 //
+const locationBreakdown = (array) => {
+    return array.reduce((acc, current) => {
+        if (acc[current.location]){
+            acc[current.location] += 1;
+        } else {
+            acc[current.location] = 1;
+        }
+        return acc;
+    }, {});
+};
+
+console.log(locationBreakdown(students));
