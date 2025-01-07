@@ -16,11 +16,7 @@ const logCourses = (students) => {
 //of only the students whose location property matches the input location and who have at least 1 past course they have completed
 //
 const filterByCoursesAndLocation = (array, location) => {
-    let newArr = [];
-    array.filter(s => {if(s === location && s.courses.past.forEach(s.courses.past > 1)){
-        return newArr.push(s)
-    }})
-    return newArr
+    return array.filter(s => s.location === location && s.courses.past.length >= 1)
 };
 
 // Problem #4 //
@@ -29,19 +25,32 @@ const filterByCoursesAndLocation = (array, location) => {
 //function should use the native filter method to return a new array of only the students 
 //who have completed Bootcamp (if their current phase is Bootcamp, they have not completed the course yet).
  
-const filterByBootcamp = (student) => {
-    let newArr = []
-    students.filter(student => {if(students.courses.phase !== "Bootcamp"){newArr.push(student)}})
-    return newArr;
+const filterByBootcamp = (students) => {
+   return students.filter(student => student.courses.phase !== "Bootcamp")
 };
 
 // Problem #5 //
-const mapCurrentCourses = () => {
-    
+/**
+ * Create a function called `mapCurrentCourses` that takes in one parameter - `array` - 
+ * which represents an array of student objects like the array featured in data.js. 
+ * This function should use the native map method to return a new array of strings of 
+ * all every student's current course name and date as shown in the example below.
+ */
+const mapCurrentCourses = (students) => {
+    return students.map(student => `${student.courses.current} - ${student.courses.date}`)
 };
 
 // Problem #6 //
-const mapPastCourses = () => {
-    
-};
-
+/*Create a function called `mapPastCourses` that takes in one parameter - `array` - 
+which represents an array of student objects like the array featured in data.js. 
+This function should use the native map method to return a new array of objects 
+where each key is phase and the value at each key is the date as shown in the example below.
+*/
+const mapPastCourses = (array) => {
+    return array.map(student => {
+        const pastCourses = {};
+        student.courses.past.forEach(course => {pastCourses[course.phase] = course.date;})
+       return pastCourses
+    }
+       );
+}
