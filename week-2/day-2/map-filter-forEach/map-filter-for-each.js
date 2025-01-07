@@ -5,8 +5,8 @@ const logStudentInfo = (students) => {
 };
 
 // Problem #2 //
-const logCourses = () => {
-   
+const logCourses = (students) => {
+    logCourses => {students.forEach().courses.forEach(console.log(`${courses.past.phase} - ${courses.past.date}`))}
 };
 
 // Problem #3 //

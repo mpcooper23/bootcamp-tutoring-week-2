@@ -12,7 +12,7 @@ Bethany Joseph - New Orleans, LA - Current Course: Bootcamp
 etc...
 */
 ```
-logStudentInfo => {students.forEach(console.log(`${students.name} - ${students.location} - ${}))}
+
 
 
 2. Create a function called `logCourses` that takes in one parameter - `array` - which represents an array of student objects like the array featured in data.js. This function should use the forEach method to iterate through each student, and then it use use forEach again to iterate through each student's past courses. It should log each past course's name and date as shown in the example below.
