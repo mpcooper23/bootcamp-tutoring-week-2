@@ -1,8 +1,14 @@
 
 // Problem #1 //
+/**
+ * 
+ * Create a function called `logStudentInfo` that takes in one parameter - `array` - 
+ * which represents an array of student objects like the array featured in data.js. 
+ * This function should log each student's name, location and current course as shown 
+ * in the example below. You must use the forEach method in your implementation.} 
+ */
 const logStudentInfo = (students) => {
-    logStudentInfo => {students.forEach(console.log(`${students.name} - ${students.location} - ${students.courses.current}`))}
-};
+    students.forEach(console.log(`${students.name} - ${students.location} - Current Course: ${students.courses.current.phase}`))};
 
 // Problem #2 //
 const logCourses = (students) => {
