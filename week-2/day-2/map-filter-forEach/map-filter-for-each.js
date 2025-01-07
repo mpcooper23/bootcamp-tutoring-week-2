@@ -8,7 +8,7 @@
  * in the example below. You must use the forEach method in your implementation.} 
  */
 const logStudentInfo = (students) => {
-    students.forEach(console.log(`${students.name} - ${students.location} - Current Course: ${students.courses.current.phase}`))};
+    students.forEach(student => {console.log(`${student.name} - ${student.location} - Current Course: ${student.courses.current.phase}`)})};
 
 // Problem #2 //
 const logCourses = (students) => {
