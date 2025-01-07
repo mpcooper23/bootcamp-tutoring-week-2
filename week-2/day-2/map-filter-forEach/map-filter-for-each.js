@@ -29,8 +29,10 @@ const filterByCoursesAndLocation = (array, location) => {
 //function should use the native filter method to return a new array of only the students 
 //who have completed Bootcamp (if their current phase is Bootcamp, they have not completed the course yet).
  
-const filterByBootcamp = () => {
-    
+const filterByBootcamp = (student) => {
+    let newArr = []
+    students.filter(student => {if(students.courses.phase !== "Bootcamp"){newArr.push(student)}})
+    return newArr;
 };
 
 // Problem #5 //
