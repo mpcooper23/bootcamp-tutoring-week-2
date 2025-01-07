@@ -26,7 +26,7 @@ const filterByCoursesAndLocation = (array, location) => {
 //who have completed Bootcamp (if their current phase is Bootcamp, they have not completed the course yet).
  
 const filterByBootcamp = (students) => {
-   return students.filter(student => student.courses.phase !== "Bootcamp")
+   return students.filter(student => student.courses.current.phase !== "Bootcamp")
 };
 
 // Problem #5 //
