@@ -1,6 +1,6 @@
 Previously, we practiced using the native array methods of `map()`, `filter()`, and `forEach()`. Today, we will be discussing the native array method `reduce()`.
 
-`reduce()` is a highly versatile array method that has much in common with `map()`, `filter()`, and `forEach()`, but it also has some key differences. The most obvious similarity between all of these methods is that each of them iterates through an array and invokes a callback function on each iteration. What separates `reduce()` is that unlike `map()` and `filter()`, reduce can return any datatype. Take a look at this example:
+`reduce()` is a highly versatile arra method that has much in common with `map()`, `filter()`, and `forEach()`, but it also has some keyy differences. The most obvious similarity between all of these methods is that each of them iterates through an array and invokes a callback function on each iteration. What separates `reduce()` is that unlike `map()` and `filter()`, reduce can return any datatype. Take a look at this example:
 
 ```javascript
 const nums = [5, 6, 7, 8];
