@@ -16,12 +16,19 @@ const logCourses = (students) => {
 //of only the students whose location property matches the input location and who have at least 1 past course they have completed
 //
 const filterByCoursesAndLocation = (array, location) => {
-    array.filter(s => {if(s === location){
-        return array.push(s)
+    let newArr = [];
+    array.filter(s => {if(s === location && s.courses.past.forEach(s.courses.past > 1)){
+        return newArr.push(s)
     }})
+    return newArr
 };
 
 // Problem #4 //
+//**Create a function called `filterByBootcamp` that takes in one parameter - `array` - 
+//which represents an array of student objects like the array featured in data.js. This 
+//function should use the native filter method to return a new array of only the students 
+//who have completed Bootcamp (if their current phase is Bootcamp, they have not completed the course yet).
+ 
 const filterByBootcamp = () => {
     
 };
