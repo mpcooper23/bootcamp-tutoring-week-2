@@ -67,7 +67,6 @@ const filterByCondition = (array, func, funcTwo) => {
     for(let i = 0; i < array.length; i++){
 if (func(array[i])){
     newArr.push(array[i])
-
 }
     
 }
