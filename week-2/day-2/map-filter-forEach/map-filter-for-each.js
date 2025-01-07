@@ -37,7 +37,7 @@ const filterByBootcamp = (students) => {
  * all every student's current course name and date as shown in the example below.
  */
 const mapCurrentCourses = (students) => {
-    return students.map(student => `${student.courses.current} - ${student.courses.date}`)
+    return students.map(student => `${student.courses.current} - ${student.courses.current.date}`)
 };
 
 // Problem #6 //
