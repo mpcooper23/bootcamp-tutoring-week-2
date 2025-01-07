@@ -47,7 +47,7 @@ const movies = [
         director: 'Alfred Hitchcock',
         year: 1954
     };
-
+]
 // filter for even numbers
 const evens = nums.filter(num => num % 2 === 0);
 console.log(evens); // => [2, 4]
