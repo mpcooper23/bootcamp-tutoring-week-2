@@ -1,7 +1,7 @@
 
 // Problem #1 //
-const logStudentInfo = () => {
-    
+const logStudentInfo = (students) => {
+    logStudentInfo => {students.forEach(console.log(`${students.name} - ${students.location} - ${students.courses.current}`))}
 };
 
 // Problem #2 //
