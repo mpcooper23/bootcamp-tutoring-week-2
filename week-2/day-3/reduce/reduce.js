@@ -41,7 +41,9 @@ const getPrecourseNames = (array) => {
         if(student.courses.past.includes("Precourse")){
         acc += student.name + '\n';
  } 
-return acc;}, '')};
+return acc;
+}, '');
+};
 
 // Problem #4 //
 
