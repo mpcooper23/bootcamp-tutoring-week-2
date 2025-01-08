@@ -22,8 +22,12 @@ const currentBootcampers = (array) => {
  * names who live in the input location.
  */
 const getNamesByLocation = (array, location) => {
-   
-};
+   return array.reduce((acc, student) => {
+    if(student.location === location){
+        acc.push(student.name);
+    }
+    return acc;
+}, [])};
 
 // Problem #3 //
 /**
@@ -32,9 +36,12 @@ const getNamesByLocation = (array, location) => {
  * reduce method to return a string of every student's name who has completed Precourse followed by 
  * linebreak characters.
  */
-const getPrecourseNames = () => {
-    
-};
+const getPrecourseNames = (array) => {
+    return array.reduce((acc, student) => {
+        if(student.courses.past.includes("Precourse")){
+        acc += student.name + '\n';
+ } 
+return acc;}, '')};
 
 // Problem #4 //
 
@@ -44,7 +51,14 @@ const getPrecourseNames = () => {
  * use the native reduce method to return an object where each key is a location and the value at 
  * the key is the number of students from that location.
  */
-const locationBreakdown = () => {
-
+const locationBreakdown = (array) => {
+return array.reduce((acc, student) => {
+const location = student.location;
+if(acc[location]){
+    acc[location] += 1
+}else {acc[location] = 1
+}
+    return acc;
+}, {});
 };
 
