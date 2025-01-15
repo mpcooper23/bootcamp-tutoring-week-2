@@ -38,11 +38,11 @@ const getNamesByLocation = (array, location) => {
  */
 const getPrecourseNames = (array) => {
     return array.reduce((acc, student) => {
-        if(student.courses.past.includes("Precourse")){
-        acc += student.name + '\n';
- } 
-return acc;
-}, '');
+        if (student.courses.past.includes("Precourse")) {
+            acc += student.name + '\n'; // Append the student's name and a newline
+        }
+        return acc;
+    }, '');
 };
 
 // Problem #4 //
