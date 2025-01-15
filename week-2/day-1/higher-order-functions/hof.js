@@ -62,13 +62,14 @@ const mapByDataType = (array, func, string) => {
  * 
  */
 
-const filterByCondition = (array, condition, test) => {
+const filterByCondition = (array, test, condition) => {
     let newArr = [];
-    for(let i = 0; i < array.length; i++){
-if (condition(i, array)){
-    if(test(array[i], i, array))
-    newArr.push(array[i])
-}  
-}
-return newArr
-}
+    for (let i = 0; i < array.length; i++) {
+        if (condition(i, array)) {
+            if (test(array[i], i, array)) {
+                newArr.push(array[i]);
+            }
+        }
+    }
+    return newArr;
+};
