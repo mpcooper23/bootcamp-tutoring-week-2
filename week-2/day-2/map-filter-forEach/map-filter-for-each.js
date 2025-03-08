@@ -8,11 +8,25 @@
  * in the example below. You must use the forEach method in your implementation.} 
  */
 
+function logStudentInfo(array){
+return array.forEach(student => `${student.name} - ${student.location} - Current course: ${student.courses.current.phase}`)
+}
+
 
 // Problem #2 //
+/*2. Create a function called `logCourses` that takes in one parameter - `array` - which represents an array of student 
+objects like the array featured in data.js. This function should use the forEach method to iterate through each student, 
+and then it use use forEach again to iterate through each student's past courses. It should log each past course's name 
+and date as shown in the example below.*/
+
+const logCourses = (students) => {
+  logCourses => {students.forEach().courses.forEach(console.log(`${courses.past.phase} - ${courses.past.date}`))}
+};
 
 
-// Problem #3 
+  
+
+// Problem #3
 //**Create a function called `filterByLocationAndCourses` that takes in two parameters - `array, location` - 
 //`array` represents an array of student objects like the array featured in data.js; `location` represents 
 //a string of a student's location. This function should use the native filter method to return a new array 
