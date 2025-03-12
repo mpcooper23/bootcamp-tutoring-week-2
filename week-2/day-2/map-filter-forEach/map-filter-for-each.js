@@ -80,3 +80,15 @@ This function should use the native map method to return a new array of objects
 where each key is phase and the value at each key is the date as shown in the example below.
 */
 
+let mapPastCourses = (array) => {
+  return array.map(student => {
+    return student.courses.past.map(course => {
+      return { [course.phase]: course.date };
+    });
+  });
+};
+
+// Example usage:
+const result = mapPastCourses(students);
+console.log(result);
+
