@@ -33,6 +33,18 @@ const logCourses = (students) => {
 //of only the students whose location property matches the input location and who have at least 1 past course they have completed
 //
 
+let filterByCoursesAndLocation = (array, location) => {
+  array.filter(s => {
+    for(let i = 0; i < s.courses.length; i++){
+      if(s.courses[i].past){
+        if(s.location === location){
+          return true;
+        }
+      }
+    }
+    return false;
+  })
+}
 
 // Problem #4 //
 //**Create a function called `filterByBootcamp` that takes in one parameter - `array` - 
