@@ -39,6 +39,14 @@ return acc;
  * linebreak characters.
  */
 
+let getPrecourseNames = (array) => {
+return array.reduce((acc, current) => {
+    for(let i = 0; i < current.courses.past.length; i++){
+if(current.courses.past[i].phase === 'Precourse'){
+acc += current.name + '\n';
+}}
+return acc;}, '')
+}
 
 // Problem #4 //
 
@@ -49,4 +57,13 @@ return acc;
  * the key is the number of students from that location.
  */
 
-
+let locationBreakdown = (array) => {
+    return array.reduce((acc, current) => {
+if(!acc[current.location]){
+    acc[current.location] = 1
+}else {
+    acc[current.location] += 1
+}
+return acc;
+    }, {})
+}
