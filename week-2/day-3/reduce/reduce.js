@@ -23,6 +23,13 @@ let currentBootcampers = (array) => {
  * names who live in the input location.
  */
 
+let getNamesByLocation = (array, location) => {
+    return array.reduce((acc, current) => {
+        if(current.location === location)
+{acc.push(current.name)}
+return acc;
+    }, [])
+}
 
 // Problem #3 //
 /**
